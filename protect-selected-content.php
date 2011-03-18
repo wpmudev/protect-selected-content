@@ -33,9 +33,7 @@ class PartialPostPassword {
   function PartialPostPassword() {
 
     //shortcodes
-    if ( !is_admin() ) {
-    	add_shortcode( 'protect', array(&$this, 'shortcode') );
-		}
+    add_shortcode( 'protect', array(&$this, 'shortcode') );
     
     //localize the plugin
 	  add_action( 'plugins_loaded', array(&$this, 'localization') );
@@ -120,6 +118,8 @@ class PartialPostPassword {
 
 				<script type="text/javascript">
 
+          tinyMCEPopup.storeSelection();
+          
 					var insertProtect = function (ed) {
 						var password = jQuery.trim(jQuery('#psc-password').val());
 						if (!password) {
@@ -127,10 +127,11 @@ class PartialPostPassword {
               jQuery('#psc-password').focus();
               return false;
 						}
-						
+						tinyMCEPopup.restoreSelection();
 						output = '[protect password="'+password+'"]'+tinyMCEPopup.editor.selection.getContent()+'[/protect]';
 
-						tinyMCEPopup.execCommand('mceInsertContent', false, output);
+						tinyMCEPopup.execCommand('mceInsertContent', 0, output);
+						tinyMCEPopup.editor.execCommand('mceRepaint');
             tinyMCEPopup.editor.focus();
 						// Return
 						tinyMCEPopup.close();
