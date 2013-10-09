@@ -1,0 +1,72 @@
+# Copyright (C) 2013 Password Protect Selected Content
+# This file is distributed under the same license as the Password Protect Selected Content package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Password Protect Selected Content 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/protect-selected-content\n"
+"POT-Creation-Date: 2013-10-09 16:40:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: protect-selected-content.php:76
+msgid "This content is password protected. To view it please enter your password below:"
+msgstr ""
+
+#: protect-selected-content.php:77
+msgid "Password:"
+msgstr ""
+
+#: protect-selected-content.php:77
+msgid "Submit"
+msgstr ""
+
+#: protect-selected-content.php:147
+msgid "Password Protect Content"
+msgstr ""
+
+#: protect-selected-content.php:153
+msgid "Please enter a password!"
+msgstr ""
+
+#: protect-selected-content.php:157
+msgid "Password"
+msgstr ""
+
+#: protect-selected-content.php:161
+msgid "Enter a password to be applied to the selected content."
+msgstr ""
+
+#: protect-selected-content.php:169
+msgid "Cancel"
+msgstr ""
+
+#: protect-selected-content.php:173
+msgid "Insert"
+msgstr ""
+
+#: protect-selected-content.php:220
+msgid "Please install the latest version of <a href=\"http://premium.wpmudev.org/project/update-notifications/\" title=\"Download Now &raquo;\">our free Update Notifications plugin</a> which helps you stay up-to-date with the most stable, secure versions of WPMU DEV themes and plugins. <a href=\"http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/\">More information &raquo;</a>"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Password Protect Selected Content"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://premium.wpmudev.org/project/password-protect-selected-content/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Allows you to password protect selected content within a post or page while the rest of content remains public."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Aaron Edwards (Incsub)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://premium.wpmudev.org/"
+msgstr ""
