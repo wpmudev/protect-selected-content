@@ -3,7 +3,7 @@
 Plugin Name: Password Protect Selected Content
 Plugin URI: http://premium.wpmudev.org/project/password-protect-selected-content/
 Description: Allows you to password protect selected content within a post or page while the rest of content remains public.
-Author: Aaron Edwards (Incsub)
+Author: WPMU DEV
 Version: 1.0
 Author URI: http://premium.wpmudev.org/
 Textdomain: psc
@@ -11,7 +11,9 @@ WDP ID: 176
 */
 
 /* 
-Copyright 2007-2011 Incsub (http://incsub.com)
+Copyright 2007-2014 Incsub (http://incsub.com)
+Author - Aaron Edwards
+Contributors - 
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
