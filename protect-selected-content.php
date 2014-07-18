@@ -4,7 +4,7 @@ Plugin Name: Password Protect Selected Content
 Plugin URI: http://premium.wpmudev.org/project/password-protect-selected-content/
 Description: Allows you to password protect selected content within a post or page while the rest of content remains public.
 Author: WPMU DEV
-Version: 1.0
+Version: 1.1
 Author URI: http://premium.wpmudev.org/
 Textdomain: psc
 WDP ID: 176
@@ -32,7 +32,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 class PartialPostPassword {
 
-  function PartialPostPassword() {
+  function __construct() {
 
     //shortcodes
     add_shortcode( 'protect', array(&$this, 'shortcode') );
@@ -48,6 +48,8 @@ class PartialPostPassword {
 		add_action( 'wp_ajax_protectTinymceOptions', array(&$this, 'tinymce_options') );
     add_action( 'admin_init', array(&$this, 'load_tinymce') );
 
+	  //load dashboard notice
+	  include_once( 'dash-notice/wpmudev-dash-notification.php' );
   }
 
   function localization() {
@@ -70,7 +72,7 @@ class PartialPostPassword {
     	return do_shortcode( $content );
     	
 		//check cookie for password
-		if ( $_COOKIE['psc-postpass_' . COOKIEHASH] == sha1( $password ) ) {
+		if ( isset( $_COOKIE['psc-postpass_' . COOKIEHASH] ) && $_COOKIE['psc-postpass_' . COOKIEHASH] == sha1( $password ) ) {
    		return do_shortcode( $content );
 		} else {
 		  $label = 'pwbox-' . rand();
@@ -209,18 +211,4 @@ class PartialPostPassword {
 } //end class
 
 //load class
-$psc = &new PartialPostPassword();
-
-
-///////////////////////////////////////////////////////////////////////////
-/* -------------------- Update Notifications Notice -------------------- */
-if ( !function_exists( 'wdp_un_check' ) ) {
-  add_action( 'admin_notices', 'wdp_un_check', 5 );
-  add_action( 'network_admin_notices', 'wdp_un_check', 5 );
-  function wdp_un_check() {
-    if ( !class_exists( 'WPMUDEV_Update_Notifications' ) && current_user_can( 'install_plugins' ) )
-      echo '<div class="error fade"><p>' . __('Please install the latest version of <a href="http://premium.wpmudev.org/project/update-notifications/" title="Download Now &raquo;">our free Update Notifications plugin</a> which helps you stay up-to-date with the most stable, secure versions of WPMU DEV themes and plugins. <a href="http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/">More information &raquo;</a>', 'wpmudev') . '</a></p></div>';
-  }
-}
-/* --------------------------------------------------------------------- */
-?>
+$psc = new PartialPostPassword();
