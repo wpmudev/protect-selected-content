@@ -15,7 +15,7 @@
 			// Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceChat');
 			ed.addCommand('mceProtect', function() {
 				ed.windowManager.open({
-					file : url + "../../../../../wp-admin/admin-ajax.php?action=protectTinymceOptions",
+					file : ajaxurl + "?action=protectTinymceOptions",
     	 		width : 480,
 					height : 100,
 					inline : 1
