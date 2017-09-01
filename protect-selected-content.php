@@ -4,7 +4,7 @@ Plugin Name: Password Protect Selected Content
 Plugin URI: http://premium.wpmudev.org/project/password-protect-selected-content/
 Description: Allows you to password protect selected content within a post or page while the rest of content remains public.
 Author: WPMU DEV
-Version: 1.2-beta-1
+Version: 1.2-beta-2
 Author URI: http://premium.wpmudev.org/
 Textdomain: psc
 WDP ID: 176
