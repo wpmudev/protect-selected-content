@@ -55,7 +55,7 @@ class PartialPostPassword {
   function localization() {
     // Load up the localization file if we're using WordPress in a different language
   	// Place it in this plugin's "languages" folder and name it "psc-[value in wp-config].mo"
-    load_plugin_textdomain( 'psc', false, '/protect-selected-content/languages/' );
+	  load_plugin_textdomain('psc', false, dirname(plugin_basename(__FILE__)) . '/languages');
   }
 
   function shortcode( $atts, $content = null ) {
@@ -196,7 +196,7 @@ class PartialPostPassword {
 	 * @see		http://codex.wordpress.org/TinyMCE_Custom_Buttons
 	 */
 	function tinymce_load_langs($langs) {
-		$langs["protect"] =  plugins_url('protect-selected-content/tinymce/langs/langs.php');
+		$langs["protect"] = plugins_url(dirname(plugin_basename(__FILE__)) . '/tinymce/langs/langs.php');
 		return $langs;
 	}
 
@@ -204,7 +204,7 @@ class PartialPostPassword {
 	 * @see		http://codex.wordpress.org/TinyMCE_Custom_Buttons
 	 */
 	function tinymce_add_plugin($plugin_array) {
-		$plugin_array['protect'] = plugins_url('protect-selected-content/tinymce/editor_plugin.js');
+		$plugin_array['protect'] = plugins_url(dirname(plugin_basename(__FILE__)) . '/tinymce/editor_plugin.js');
 		return $plugin_array;
 	}
 	
