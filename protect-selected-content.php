@@ -4,7 +4,7 @@ Plugin Name: Password Protect Selected Content
 Plugin URI: http://premium.wpmudev.org/project/password-protect-selected-content/
 Description: Allows you to password protect selected content within a post or page while the rest of content remains public.
 Author: WPMU DEV
-Version: 1.2-beta-2
+Version: 1.2-beta-3
 Author URI: http://premium.wpmudev.org/
 Textdomain: psc
 WDP ID: 176
@@ -114,7 +114,14 @@ class PartialPostPassword {
 		<html>
 			<head>
 				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-				<script type="text/javascript" src="../wp-includes/js/tinymce/tiny_mce_popup.js?ver=327-1235"></script>
+                <?php
+	                /**
+	                 * TODO: We are including our own copy of tiny_mce_popup.js until this issue is resolved in the core file: https://core.trac.wordpress.org/ticket/41124
+	                 */
+                ?>
+                <script type="text/javascript"
+                        src="<?php echo plugins_url(dirname(plugin_basename(__FILE__)) . '/tinymce/tiny_mce_popup.js'); ?>">
+                </script>
 				<script type="text/javascript" src="../wp-includes/js/tinymce/utils/form_utils.js?ver=327-1235"></script>
 				<script type="text/javascript" src="../wp-includes/js/tinymce/utils/editable_selects.js?ver=327-1235"></script>
 
